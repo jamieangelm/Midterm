@@ -119,29 +119,29 @@ int main() {
 			break;
 
 		case 10:
-			cout << "you're in room 10, where you see a red apple! you see a door that needs a key!";
+			cout << "you're in room 10, where you see a red apple! you can go north (n) or south (s)!";
 			cin >> input;
 			if (input == 'n')
-				room = 1;
-			if (input == 'w')
-				room = 5;
+				room = 9;
+			if (input == 's')
+				room = 11;
 			else
 				cout << "invalid input" << endl;
 			break;
 
 		case 11:
-			cout << "you're in room 10! you see a door that needs a key!";
+			cout << "you're in room 11! you encounter a monster! you need a key to unlock the door!";
 			cin >> input;
 			if (input == 'n')
-				room = 1;
-			if (input == 'w')
-				room = 5;
+				room = 10;
+			if (input == 'e')
+				room = 12;
 			else
 				cout << "invalid input" << endl;
 			break;
 
 		case 12:
-			cout << "you're in room 10! you see a door that needs a key!";
+			cout << "you're in room 12! congradulations!";
 			cin >> input;
 			if (input == 'n')
 				room = 1;
