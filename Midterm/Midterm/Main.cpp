@@ -19,7 +19,7 @@ int main() {
 
 	while (input != 'q') {
 		switch (room) {
-		case 1: rawr XD
+		case 1:
 			cout << "welcome! you're in room 1! you can go north (n) or south (s)!";
 			cin >> input;
 			if (input == 'n')
@@ -36,11 +36,12 @@ int main() {
 				room = 3;
 			if (input == 's')
 				room = 1;
-			break;
 
 			for (int i = 0; i < 5; i++)
 				inventory[0] = "silver key";
 			system("pause");
+
+			break;
 
 		case 3:
 			cout << "you're in room 3! you can go east (e) or west (w)!";
@@ -60,17 +61,24 @@ int main() {
 				room = 6;
 			if (input == 'n')
 				room = 5;
-			break;
 
 			for (int i = 0; i < 5; i++)
 				inventory[1] = "sword";
 			system("pause");
 
+			break;
+
 		case 5:
-			cout << "you're in room 5, where you encounter a monster! you can go south (s)!";
+			cout << "you're in room 5, where you encounter a monster!" << endl;
+				
+				
+			cout << "you can go south (s)!" << endl;
 			cin >> input;
 			if (input == 's')
 				room = 6;
+
+			cout <<
+
 			break;
 
 		case 6:
@@ -116,11 +124,12 @@ int main() {
 				room = 9;
 			if (input == 's')
 				room = 11;
-			break;
 
 			for (int i = 0; i < 5; i++)
 				inventory[2] = "red apple";
 			system("pause");
+
+			break;
 
 		case 11:
 			cout << "you're in room 11! you encounter a monster! you need a key to unlock the door!";
