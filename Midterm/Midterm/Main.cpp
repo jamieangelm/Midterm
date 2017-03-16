@@ -19,7 +19,7 @@ int main() {
 
 	while (input != 'q') {
 		switch (room) {
-		case 1:
+		case 1: rawr XD
 			cout << "welcome! you're in room 1! you can go north (n) or south (s)!";
 			cin >> input;
 			if (input == 'n')
