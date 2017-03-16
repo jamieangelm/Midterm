@@ -12,9 +12,9 @@ int main() {
 
 	char input = 'a';
 	int room = 1;
-	string inventory[5]{ apple, goldkey, goldenapple, sword, silverkey }
+	string inventory[5];
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 5; i++)
 		inventory[i] = " ";
 
 	while (input != 'q') {
@@ -26,20 +26,21 @@ int main() {
 				room = 2;
 			if (input == 's')
 				room = 9;
-			else
-				cout << "invalid input" << endl;
 			break;
 
 		case 2:
+
 			cout << "you're in room 2, where you found a silver key! you can go east (e) or south (s)!";
 			cin >> input;
 			if (input == 'e')
 				room = 3;
 			if (input == 's')
 				room = 1;
-			else
-				cout << "invalid input" << endl;
 			break;
+
+			for (int i = 0; i < 5; i++)
+				inventory[0] = "silver key";
+			system("pause");
 
 		case 3:
 			cout << "you're in room 3! you can go east (e) or west (w)!";
@@ -48,8 +49,6 @@ int main() {
 				room = 4;
 			if (input == 'w')
 				room = 2;
-			else
-				cout << "invalid input" << endl;
 			break;
 
 		case 4:
@@ -61,17 +60,17 @@ int main() {
 				room = 6;
 			if (input == 'n')
 				room = 5;
-			else
-				cout << "invalid input" << endl;
 			break;
+
+			for (int i = 0; i < 5; i++)
+				inventory[1] = "sword";
+			system("pause");
 
 		case 5:
 			cout << "you're in room 5, where you encounter a monster! you can go south (s)!";
 			cin >> input;
 			if (input == 's')
 				room = 6;
-			else
-				cout << "invalid input" << endl;
 			break;
 
 		case 6:
@@ -81,8 +80,6 @@ int main() {
 				room = 4;
 			if (input == 's')
 				room = 7;
-			else
-				cout << "invalid input" << endl;
 			break;
 
 		case 7:
@@ -92,8 +89,6 @@ int main() {
 				room = 6;
 			if (input == 'w')
 				room = 8;
-			else
-				cout << "invalid input" << endl;
 			break;
 
 		case 8:
@@ -103,8 +98,6 @@ int main() {
 				room = 9;
 			if (input == 'e')
 				room = 7;
-			else
-				cout << "invalid input" << endl;
 			break;
 
 		case 9:
@@ -114,8 +107,6 @@ int main() {
 				room = 1;
 			if (input == 's')
 				room = 10;
-			else
-				cout << "invalid input" << endl;
 			break;
 
 		case 10:
@@ -125,9 +116,11 @@ int main() {
 				room = 9;
 			if (input == 's')
 				room = 11;
-			else
-				cout << "invalid input" << endl;
 			break;
+
+			for (int i = 0; i < 5; i++)
+				inventory[2] = "red apple";
+			system("pause");
 
 		case 11:
 			cout << "you're in room 11! you encounter a monster! you need a key to unlock the door!";
@@ -136,19 +129,15 @@ int main() {
 				room = 10;
 			if (input == 'e')
 				room = 12;
-			else
-				cout << "invalid input" << endl;
 			break;
 
 		case 12:
-			cout << "you're in room 12! congradulations!";
+			cout << "you're in room 12! congratulations!";
 			cin >> input;
 			if (input == 'n')
 				room = 1;
 			if (input == 'w')
 				room = 5;
-			else
-				cout << "invalid input" << endl;
 			break;
 		}
 	}
