@@ -32,9 +32,9 @@ int main() {
 
 			cout << "you're in room 2, where you found a silver key! you can go east or south!";
 			getline(cin, input);
-			if (input == 'e')
+			if (input.compare("east") == 0)
 				room = 3;
-			if (input == 's')
+			if (input.compare("south") == 0)
 				room = 1;
 
 			for (int i = 0; i < 5; i++)
@@ -44,7 +44,7 @@ int main() {
 			break;
 
 		case 3:
-			cout << "you're in room 3! you can go east (e) or west (w)!";
+			cout << "you're in room 3! you can go east or west!";
 			getline(cin, input);
 			if (input == 'e')
 				room = 4;
@@ -53,7 +53,7 @@ int main() {
 			break;
 
 		case 4:
-			cout << "you're in room 4, where you found a sword! you can go west (w) or south (s)!";
+			cout << "you're in room 4, where you found a sword! you can go west or south!";
 			getline(cin, input);
 			if (input == 'w')
 				room = 3;
@@ -72,7 +72,7 @@ int main() {
 			cout << "you're in room 5, where you encounter a monster!" << endl;
 				
 				
-			cout << "you can go south (s)!" << endl;
+			cout << "you can go south!" << endl;
 			getline(cin, input);
 			if (input == 's')
 				room = 6;
@@ -82,7 +82,7 @@ int main() {
 			break;
 
 		case 6:
-			cout << "you're in room 6, where you encounter a monster! you can go north (n) or south (s)!";
+			cout << "you're in room 6, where you encounter a monster! you can go north or south!";
 			getline(cin, input);
 			if (input == 'n')
 				room = 4;
@@ -91,7 +91,7 @@ int main() {
 			break;
 
 		case 7:
-			cout << "you're in room 7! you can go north (n) and west (w)!";
+			cout << "you're in room 7! you can go north and west!";
 			getline(cin, input);
 			if (input == 'n')
 				room = 6;
@@ -100,7 +100,7 @@ int main() {
 			break;
 
 		case 8:
-			cout << "you're in room 8! you can go west (w) or east (e)!";
+			cout << "you're in room 8! you can go west or east!";
 			getline(cin, input);
 			if (input == 'w')
 				room = 9;
@@ -109,7 +109,7 @@ int main() {
 			break;
 
 		case 9:
-			cout << "you're in room 9, where you see a human! you can go north (n) or south (s)!";
+			cout << "you're in room 9, where you see a human! you can go north or south!";
 			getline(cin, input);
 			if (input == 'n')
 				room = 1;
@@ -118,7 +118,7 @@ int main() {
 			break;
 
 		case 10:
-			cout << "you're in room 10, where you see a red apple! you can go north (n) or south (s)!";
+			cout << "you're in room 10, where you see a red apple! you can go north or south!";
 			getline(cin, input);
 			if (input == 'n')
 				room = 9;
