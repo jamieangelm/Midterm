@@ -10,28 +10,28 @@ bool silverkey = 0; //key to hidden room
 
 int main() {
 
-	char input = 'a';
+	string input = "a";
 	int room = 1;
 	string inventory[5];
 
 	for (int i = 0; i < 5; i++)
 		inventory[i] = " ";
 
-	while (input != 'q') {
+	while (input.compare ("quit")!=0) {
 		switch (room) {
 		case 1:
-			cout << "welcome! you're in room 1! you can go north (n) or south (s)!";
-			cin >> input;
-			if (input == 'n')
+			cout << "welcome! you're in room 1! you can go north or south!";
+			getline(cin, input);
+			if (input.compare("north") == 0)
 				room = 2;
-			if (input == 's')
+			if (input.compare("south") == 0)
 				room = 9;
 			break;
 
 		case 2:
 
-			cout << "you're in room 2, where you found a silver key! you can go east (e) or south (s)!";
-			cin >> input;
+			cout << "you're in room 2, where you found a silver key! you can go east or south!";
+			getline(cin, input);
 			if (input == 'e')
 				room = 3;
 			if (input == 's')
@@ -45,7 +45,7 @@ int main() {
 
 		case 3:
 			cout << "you're in room 3! you can go east (e) or west (w)!";
-			cin >> input;
+			getline(cin, input);
 			if (input == 'e')
 				room = 4;
 			if (input == 'w')
@@ -54,7 +54,7 @@ int main() {
 
 		case 4:
 			cout << "you're in room 4, where you found a sword! you can go west (w) or south (s)!";
-			cin >> input;
+			getline(cin, input);
 			if (input == 'w')
 				room = 3;
 			if (input == 's')
@@ -73,7 +73,7 @@ int main() {
 				
 				
 			cout << "you can go south (s)!" << endl;
-			cin >> input;
+			getline(cin, input);
 			if (input == 's')
 				room = 6;
 
@@ -83,7 +83,7 @@ int main() {
 
 		case 6:
 			cout << "you're in room 6, where you encounter a monster! you can go north (n) or south (s)!";
-			cin >> input;
+			getline(cin, input);
 			if (input == 'n')
 				room = 4;
 			if (input == 's')
@@ -92,7 +92,7 @@ int main() {
 
 		case 7:
 			cout << "you're in room 7! you can go north (n) and west (w)!";
-			cin >> input;
+			getline(cin, input);
 			if (input == 'n')
 				room = 6;
 			if (input == 'w')
@@ -101,7 +101,7 @@ int main() {
 
 		case 8:
 			cout << "you're in room 8! you can go west (w) or east (e)!";
-			cin >> input;
+			getline(cin, input);
 			if (input == 'w')
 				room = 9;
 			if (input == 'e')
@@ -110,7 +110,7 @@ int main() {
 
 		case 9:
 			cout << "you're in room 9, where you see a human! you can go north (n) or south (s)!";
-			cin >> input;
+			getline(cin, input);
 			if (input == 'n')
 				room = 1;
 			if (input == 's')
@@ -119,7 +119,7 @@ int main() {
 
 		case 10:
 			cout << "you're in room 10, where you see a red apple! you can go north (n) or south (s)!";
-			cin >> input;
+			getline(cin, input);
 			if (input == 'n')
 				room = 9;
 			if (input == 's')
@@ -133,7 +133,7 @@ int main() {
 
 		case 11:
 			cout << "you're in room 11! you encounter a monster! you need a key to unlock the door!";
-			cin >> input;
+			getline(cin, input);
 			if (input == 'n')
 				room = 10;
 			if (input == 'e')
@@ -142,7 +142,7 @@ int main() {
 
 		case 12:
 			cout << "you're in room 12! congratulations!";
-			cin >> input;
+			getline(cin, input);
 			if (input == 'n')
 				room = 1;
 			if (input == 'w')
