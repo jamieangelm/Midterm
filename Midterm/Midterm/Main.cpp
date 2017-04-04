@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 using namespace std;
 
 bool apple = 0; //adds ~ 10 health
@@ -8,7 +9,11 @@ bool goldenapple = 0; //adds ~ 60 health
 bool sword = 0; //fite them guardz
 bool silverkey = 0; //key to hidden room
 
+void Monsters();
+
 int main() {
+
+	int num;
 
 	string input = "a";
 	int room = 1;
@@ -70,7 +75,7 @@ int main() {
 
 		case 5:
 			cout << "you're in room 5, where you encounter a monster!" << endl;
-				
+			Monsters();
 				
 			cout << "you can go south!" << endl;
 			getline(cin, input);
@@ -83,6 +88,7 @@ int main() {
 
 		case 6:
 			cout << "you're in room 6, where you encounter a monster! you can go north or south!";
+			Monsters();
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 4;
@@ -133,6 +139,7 @@ int main() {
 
 		case 11:
 			cout << "you're in room 11! you encounter a monster! you need a key to unlock the door!";
+			Monsters();
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 10;
@@ -150,4 +157,16 @@ int main() {
 			break;
 		}
 	}
+}
+
+void Monsters() {
+
+	int num = rand() % 100 + 1;
+	if (num <= 50)
+		cout << "A vampire appears and attacks you" << endl;
+	else if (num > 51 && num <= 80)
+		cout << "An alien appears and attacks you" << endl;
+	else
+		cout << "A zombie appears and attacks you" << endl;
+
 }
