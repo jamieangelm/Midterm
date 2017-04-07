@@ -37,6 +37,7 @@ int main() {
 
 			cout << "you're in room 2, where you found a silver key! you can go east or south!";
 			getline(cin, input);
+			system("Color 2B");
 			if (input.compare("east") == 0)
 				room = 3;
 			if (input.compare("south") == 0)
@@ -60,6 +61,7 @@ int main() {
 		case 4:
 			cout << "you're in room 4, where you found a sword! you can go west or south!";
 			getline(cin, input);
+			system("Color 2B");
 			if (input.compare ("west") == 0)
 				room = 3;
 			if (input.compare("south") == 0)
@@ -75,6 +77,7 @@ int main() {
 
 		case 5:
 			cout << "you're in room 5, where you encounter a monster!" << endl;
+			system("Color 4B");
 			Monsters();
 				
 			cout << "you can go south!" << endl;
@@ -88,6 +91,7 @@ int main() {
 
 		case 6:
 			cout << "you're in room 6, where you encounter a monster! you can go north or south!";
+			system("Color 4B");
 			Monsters();
 			getline(cin, input);
 			if (input.compare("north") == 0)
@@ -126,7 +130,7 @@ int main() {
 		case 10:
 			cout << "you're in room 10, where you see a red apple! you can go north or south!";
 			getline(cin, input);
-			if (input.compare("northt") == 0)
+			if (input.compare("north") == 0)
 				room = 9;
 			if (input.compare("south") == 0)
 				room = 11;
@@ -139,6 +143,7 @@ int main() {
 
 		case 11:
 			cout << "you're in room 11! you encounter a monster! you need a key to unlock the door!";
+			system("Color 2B");
 			Monsters();
 			getline(cin, input);
 			if (input.compare("north") == 0)
