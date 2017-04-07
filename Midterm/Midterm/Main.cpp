@@ -3,6 +3,8 @@
 #include <ctime>
 using namespace std;
 
+int health = 500;
+
 bool apple = 0; //adds ~ 10 health
 bool goldkey = 0; //key needed to finish game
 bool goldenapple = 0; //adds ~ 60 health
@@ -21,6 +23,8 @@ int main() {
 
 	for (int i = 0; i < 5; i++)
 		inventory[i] = " ";
+
+	cout << "You feel the eerie atmosphere as you approach 'The Labyrinth'...." << endl;
 
 	while (input.compare ("quit")!=0) {
 		switch (room) {
@@ -129,6 +133,7 @@ int main() {
 
 		case 10:
 			cout << "you're in room 10, where you see a red apple! you can go north or south!";
+			system("Color 3C");
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 9;
