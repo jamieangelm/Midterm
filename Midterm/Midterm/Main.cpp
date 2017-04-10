@@ -1,14 +1,17 @@
+//Jamie Martinez, April 10
+//
+
 #include <iostream>
 #include <string>
 #include <ctime>
 using namespace std;
 
-int health = 500;
+int health = 500; //total health
 
-bool apple = 0; //adds ~ 10 health
+bool apple = 0; //adds ~ 50 health
 bool goldkey = 0; //key needed to finish game
-bool goldenapple = 0; //adds ~ 60 health
-bool sword = 0; //fite them guardz
+bool goldenapple = 0; //adds ~ 350 health
+bool sword = 0; //fight monster
 bool silverkey = 0; //key to hidden room
 
 void Monsters();
@@ -24,12 +27,12 @@ int main() {
 	for (int i = 0; i < 5; i++)
 		inventory[i] = " ";
 
-	cout << "You feel the eerie atmosphere as you approach 'The Labyrinth'...." << endl;
+	cout << "You feel the eerie atmosphere as you approach 'The Labyrinth'..." << endl;
 
 	while (input.compare ("quit")!=0) {
 		switch (room) {
 		case 1:
-			cout << "welcome! you're in room 1! you can go north or south!";
+			cout << "You enter a room that's barely lit with a few torches. You can go north or south.";
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 2;
@@ -39,7 +42,7 @@ int main() {
 
 		case 2:
 
-			cout << "you're in room 2, where you found a silver key! you can go east or south!";
+			cout << "You enter a more lit room, where you found a silver key! You can go east or south.";
 			getline(cin, input);
 			system("Color 2B");
 			if (input.compare("east") == 0)
@@ -54,7 +57,7 @@ int main() {
 			break;
 
 		case 3:
-			cout << "you're in room 3! you can go east or west!";
+			cout << "you're in room 3! you can go east or west.";
 			getline(cin, input);
 			if (input.compare("east") == 0)
 				room = 4;
@@ -63,7 +66,7 @@ int main() {
 			break;
 
 		case 4:
-			cout << "you're in room 4, where you found a sword! you can go west or south!";
+			cout << "you're in room 4, where you found a sword! you can go west or south.";
 			getline(cin, input);
 			system("Color 2B");
 			if (input.compare ("west") == 0)
@@ -80,7 +83,7 @@ int main() {
 			break;
 
 		case 5:
-			cout << "you're in room 5, where you encounter a monster!" << endl;
+			cout << "you're in room 5, where you encounter a monster." << endl;
 			system("Color 4B");
 			Monsters();
 				
@@ -94,7 +97,7 @@ int main() {
 			break;
 
 		case 6:
-			cout << "you're in room 6, where you encounter a monster! you can go north or south!";
+			cout << "you're in room 6, where you encounter a monster! you can go north or south.";
 			system("Color 4B");
 			Monsters();
 			getline(cin, input);
@@ -105,7 +108,7 @@ int main() {
 			break;
 
 		case 7:
-			cout << "you're in room 7! you can go north and west!";
+			cout << "you're in room 7! you can go north and west.";
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 6;
@@ -114,7 +117,7 @@ int main() {
 			break;
 
 		case 8:
-			cout << "you're in room 8! you can go west or east!";
+			cout << "you're in room 8! you can go west or east.";
 			getline(cin, input);
 			if (input.compare("west") == 0)
 				room = 9;
@@ -123,7 +126,7 @@ int main() {
 			break;
 
 		case 9:
-			cout << "you're in room 9, where you see a human! you can go north or south!";
+			cout << "you're in room 9, where you see a human! you can go north or south.";
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 1;
@@ -132,7 +135,7 @@ int main() {
 			break;
 
 		case 10:
-			cout << "you're in room 10, where you see a red apple! you can go north or south!";
+			cout << "you're in room 10, where you see a red apple! you can go north or south.";
 			system("Color 3C");
 			getline(cin, input);
 			if (input.compare("north") == 0)
@@ -147,7 +150,7 @@ int main() {
 			break;
 
 		case 11:
-			cout << "you're in room 11! you encounter a monster! you need a key to unlock the door!";
+			cout << "you're in room 11! you encounter a monster! you need a key to unlock the door.";
 			system("Color 2B");
 			Monsters();
 			getline(cin, input);
