@@ -54,7 +54,6 @@ int main() {
 
 			for (int i = 0; i < 5; i++)
 				inventory[0] = "silver key";
-			system("pause");
 
 			break;
 
@@ -81,7 +80,6 @@ int main() {
 
 			for (int i = 0; i < 5; i++)
 				inventory[1] = "sword";
-			system("pause");
 
 			break;
 
@@ -97,14 +95,13 @@ int main() {
 
 			for (int i = 0; i < 5; i++)
 				inventory[0] = "gold key";
-			system("pause");
 
 			break;
 
 		case 6: //room 6
-			cout << "you're in room 6, where you encounter a monster! you can go north or south.";
-			system("Color 4B");
+			cout << "you're in room 6, where you can go north or south.";
 			Monsters();
+			system("Color 4B");
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 4;
@@ -113,7 +110,7 @@ int main() {
 			break;
 			
 		case 7:  //room 7
-			cout << "you're in room 7, where you find a red apple! you can go north and west.";
+			cout << "you're in room 7, where you can go north and west.";
 			getline(cin, input);
 			system("Color 2B");
 			if (input.compare("north") == 0)
@@ -123,7 +120,6 @@ int main() {
 
 			for (int i = 0; i < 5; i++)
 				inventory[0] = "silver key";
-			system("pause");
 
 			break;
 
@@ -158,7 +154,6 @@ int main() {
 
 			for (int i = 0; i < 5; i++)
 				inventory[2] = "red apple";
-			system("pause");
 
 			break;
 
@@ -176,7 +171,6 @@ int main() {
 
 			for (int i = 0; i < 5; i++)
 				inventory[0] = "silver key";
-			system("pause");
 
 			break;
 
@@ -196,7 +190,6 @@ int main() {
 
 			for (int i = 0; i < 5; i++)
 			inventory[0] = "goldenartifact";
-			system("pause");
 
 			break;
 
