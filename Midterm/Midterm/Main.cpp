@@ -9,7 +9,8 @@ using namespace std;
 
 int health = 500; //total health
 
-iventory
+ivenotry[0] = "fdf";
+
 redapple //adds ~ 50 health
 goldkey //key needed to finish game
 goldenapple  //adds ~ 350 health
