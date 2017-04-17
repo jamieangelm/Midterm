@@ -9,14 +9,14 @@ using namespace std;
 
 int health = 500; //total health
 
-iventory[0] = "fdf";
+inventory[0] = "fdf";
 
-redapple[1] //adds ~ 50 health
-goldkey[2] //key needed to finish game
-goldenapple[3]  //adds ~ 350 health
-sword[4]  //fight monsters
+silver key[1] //adds ~ 50 health
+sword[2] //key needed to finish game
+goldkey[3]  //adds ~ 350 health
+redapple[4]  //fight monsters
 bronzekey[5]  //to other hidden room from human
-silverkey[6]  //key to hidden room
+goldenapple[6]  //key to hidden room
 goldenartifact[7]  //wins game
 
 void Monsters();
@@ -79,8 +79,13 @@ int main() { //begin main
 			break;
 
 		case 4: //room 4
-			cout << "you enter a small room, where you found a sword on the wall! You take it and debate on going west or south.";
+			cout << "you enter a very small room." << endl;
+			if (inventory[0] = ("sword") //no sword in inventory
+				cout << "You see a sword on one of the walls.";
 			getline(cin, input);
+			if (input.compare("sword") == 0) { //sword is now in the inventory
+				inventory[0] = "sword"; //put in 
+				cout << "You grabbed the sword!" << endl;
 			system("Color 2B"); //color for rooms with items
 			if (input.compare("west") == 0)
 				room = 3;
@@ -94,14 +99,19 @@ int main() { //begin main
 			break;
 
 		case 5: //room 5, secret room
-			cout << "you've found and entered the secret room, where you encounter a monster." << endl;
-			system("Color 4B"); //color for rooms with items
-			Monsters();
+			cout << "you've found and entered the secret room, where you find a gold key." << endl;
+
+			if (inventory[0] = ("silver key") //no silver key in inventory
+				cout << "there's a silver key on the table" << endl; //say there's a key on the table
+			getline(cin, input);
+			if (input.compare("silver key") == 0) { //silver key is now in the inventory
+				inventory[0] = "silver key"; //put in 
+				cout << "You grabbed the key!" << endl;
 
 			cout << "you can go south!" << endl;
 			getline(cin, input);
 			if (input.compare("south") == 0)
-				room = 6;
+				room = 4;
 
 			inventory[2] = "gold key";
 
@@ -109,8 +119,9 @@ int main() { //begin main
 
 		case 6: //room 6, secret room
 			cout << "The human exposed the second secret room, where he exposed you to a monster encounter.";
-			Monsters();
 			system("Color 4B"); //color for rooms with monsters
+			Monsters();
+			
 			getline(cin, input);
 			if (input.compare("west") == 0)
 				room = 4;
