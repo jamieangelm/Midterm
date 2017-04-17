@@ -9,15 +9,15 @@ using namespace std;
 
 int health = 500; //total health
 
-ivenotry[0] = "fdf";
+iventory[0] = "fdf";
 
-redapple //adds ~ 50 health
-goldkey //key needed to finish game
-goldenapple  //adds ~ 350 health
-sword  //fight monsters
-bronzekey  //to other hidden room from human
-silverkey  //key to hidden room
-goldenartifact  //wins game
+redapple[1] //adds ~ 50 health
+goldkey[2] //key needed to finish game
+goldenapple[3]  //adds ~ 350 health
+sword[4]  //fight monsters
+bronzekey[5]  //to other hidden room from human
+silverkey[6]  //key to hidden room
+goldenartifact[7]  //wins game
 
 void Monsters();
 
@@ -149,7 +149,7 @@ int main() { //begin main
 				room = 10;
 			break;
 
-		case 10:  //room 10
+		case 10:  //room 10, encounter a human
 			cout << "you're in room 10, where you see a human! you can go north or south.";
 			system("Color 3C"); //color for human in room
 			getline(cin, input);
