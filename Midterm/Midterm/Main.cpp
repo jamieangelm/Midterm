@@ -9,21 +9,22 @@ using namespace std;
 
 int health = 500; //total health
 
-for (int = 0 ; i < 8 ; i++){
-string inventory[8]
-
-	inventory[0] = "Empty";
-	inventory[1] = "Empty"; //adds ~ 50 health
-	inventory[2] = "Empty"; //key needed to finish game
-	inventory[3] = "Empty";  //adds ~ 350 health
-	inventory[4] = "Empty";  //fight monsters
-	inventory[5] = "Empty";  //to other hidden room from human
-	inventory[6] = "Empty";  //key to hidden room
-	inventory[7] = "Empty";  //wins game
-}
 void Monsters();
 
 int main() { //begin main
+
+	for (int i = 0; i < 8; i++) {
+		string inventory[8];
+
+			inventory[0] = "Empty";
+		inventory[1] = "Empty"; //adds ~ 50 health
+		inventory[2] = "Empty"; //key needed to finish game
+		inventory[3] = "Empty";  //adds ~ 350 health
+		inventory[4] = "Empty";  //fight monsters
+		inventory[5] = "Empty";  //to other hidden room from human
+		inventory[6] = "Empty";  //key to hidden room
+		inventory[7] = "Empty";  //wins game
+	}
 
 	string input = "a";
 	int room = 1;
@@ -49,7 +50,7 @@ int main() { //begin main
 
 		case 2:  //room 2
 			cout << "You enter a more lit room with a table in the middle of the room";
-			if (inventory[1] = ("silver key"); //no silver key in inventory
+			if (inventory[1] == ("silver key")) //no silver key in inventory
 				cout << "there's a silver key on the table" << endl; //say there's a key on the table
 			getline(cin, input);
 			if (input.compare("silver key") == 0) { //silver key is now in the inventory
