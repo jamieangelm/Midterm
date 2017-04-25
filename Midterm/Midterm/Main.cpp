@@ -84,7 +84,7 @@ int main() { //begin main
 
 		case 4: //room 4
 			cout << "you enter a very small room." << endl;
-			if (inventory[2] = ("sword"); //no sword in inventory
+			if (inventory[2] = ("sword")); //no sword in inventory
 				cout << "You see a sword on one of the walls.";
 			getline(cin, input);
 			if (input.compare("sword") == 0) { //sword is now in the inventory
