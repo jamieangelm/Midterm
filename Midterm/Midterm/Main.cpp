@@ -206,7 +206,7 @@ int main() { //begin main
 			cout << "There's a table in the middle of the room";
 			system("Color 2B"); //color for rooms with items
 
-			if (inventory[6] == ("golden apple"); //no golden apple in inventory
+			if (inventory[6] == ("golden apple")); //no golden apple in inventory
 				cout << "a golden apple is on the table" << endl; //say there's a golden apple
 			getline(cin, input);
 			if (input.compare("golden apple") == 0) { //golden apple is now in the inventory
