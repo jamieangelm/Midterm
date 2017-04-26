@@ -50,7 +50,7 @@ int main() { //begin main
 
 		case 2:  //room 2
 			cout << "You enter a more lit room with a table in the middle of the room";
-			if (inventory[1] == ("silver key")) //no silver key in inventory
+			if (inventory[1] == ("silver key")); //no silver key in inventory
 				cout << "there's a silver key on the table" << endl; //say there's a key on the table
 			getline(cin, input);
 			if (input.compare("silver key") == 0) { //silver key is now in the inventory
@@ -84,7 +84,7 @@ int main() { //begin main
 
 		case 4: //room 4
 			cout << "you enter a very small room." << endl;
-			if (inventory[2] = ("sword")); //no sword in inventory
+			if (inventory[2] == ("sword")); //no sword in inventory
 				cout << "You see a sword on one of the walls.";
 			getline(cin, input);
 			if (input.compare("sword") == 0) { //sword is now in the inventory
@@ -99,6 +99,8 @@ int main() { //begin main
 				room = 6;
 			if (input.compare("north") == 0)
 				room = 5;
+			else
+				cout << "invalid input" << endl;
 
 			inventory[2] = "sword";
 
@@ -107,7 +109,7 @@ int main() { //begin main
 		case 5: //room 5, secret room
 			cout << "you've found and entered the secret room." << endl;
 
-			if (inventory[3] = ("gold key"); //no gold key in inventory
+			if (inventory[3] == ("gold key")); //no gold key in inventory
 				cout << "there's a gold key on the table" << endl; //say there's a key on the table
 			getline(cin, input);
 			if (input.compare("gold key") == 0) { //gold key is now in the inventory
@@ -118,6 +120,8 @@ int main() { //begin main
 			getline(cin, input);
 			if (input.compare("south") == 0)
 				room = 4;
+			else
+				cout << "invalid input" << endl;
 
 			inventory[3] = "gold key";
 
@@ -138,7 +142,7 @@ int main() { //begin main
 
 			system("Color 2B"); //color for rooms with items
 			Monsters();
-			if (inventory[4] = ("red apple"); //no red apple in inventory
+			if (inventory[4] == ("red apple")); //no red apple in inventory
 				cout << "you kill the monster, he drops a red apple" << endl; //say there's an apple
 			getline(cin, input);
 			if (input.compare("red apple") == 0) { //red apple is now in the inventory
@@ -180,7 +184,7 @@ int main() { //begin main
 			cout << "you're in room 10, where you see a human!";
 			system("Color 3C"); //color for human in room
 
-			if (inventory[5] = ("bronze key"); //no bronze key in inventory
+			if (inventory[5] == ("bronze key")); //no bronze key in inventory
 				cout << "he gives you a bronze key" << endl; //say there's a bronze key
 			getline(cin, input);
 			if (input.compare("bronze key") == 0) { //bronze key is now in the inventory
@@ -202,7 +206,7 @@ int main() { //begin main
 			cout << "There's a table in the middle of the room";
 			system("Color 2B"); //color for rooms with items
 
-			if (inventory[6] = ("golden apple"); //no golden apple in inventory
+			if (inventory[6] == ("golden apple"); //no golden apple in inventory
 				cout << "a golden apple is on the table" << endl; //say there's a golden apple
 			getline(cin, input);
 			if (input.compare("golden apple") == 0) { //golden apple is now in the inventory
@@ -237,7 +241,7 @@ int main() { //begin main
 			cout << "You reach the end, where you find the gold arifact! Congratulations on your journey!" << endl;
 			system("Color 2B"); //color for rooms with items
 
-			if (inventory[7] = ("golden artifact"); //no golden artifact in inventory
+			if (inventory[7] == ("golden artifact")); //no golden artifact in inventory
 				cout << "you see the golden artifact" << endl; //say there's a golden artifact
 			getline(cin, input);
 			if (input.compare("golden artifact") == 0) { //golden artifact is now in the inventory
