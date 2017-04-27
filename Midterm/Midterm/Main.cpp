@@ -16,7 +16,7 @@ int main() { //begin main
 	for (int i = 0; i < 8; i++) {
 		string inventory[8];
 
-			inventory[0] = "Empty";
+		inventory[0] = "Empty";
 		inventory[1] = "Empty"; //adds ~ 50 health
 		inventory[2] = "Empty"; //key needed to finish game
 		inventory[3] = "Empty";  //adds ~ 350 health
@@ -91,14 +91,17 @@ int main() { //begin main
 				inventory[2] = "sword"; //put in 
 				cout << "You grabbed the sword!" << endl;
 			}
+			cout << "you decide if you want to go south, west, north, east." << endl; 
 			system("Color 2B"); //color for rooms with items
 			getline(cin, input);
 			if (input.compare("west") == 0)
 				room = 3;
 			if (input.compare("south") == 0)
-				room = 6;
+				room = 7;
 			if (input.compare("north") == 0)
 				room = 5;
+			if (input.compare("east") == 0)
+				room = 6;
 			else
 				cout << "invalid input" << endl;
 
@@ -132,6 +135,7 @@ int main() { //begin main
 			system("Color 4B"); //color for rooms with monsters
 			Monsters();
 			
+			cout << "you can only go west." << endl;
 			getline(cin, input);
 			if (input.compare("west") == 0)
 				room = 4;
@@ -161,7 +165,8 @@ int main() { //begin main
 			break;
 
 		case 8:  //room 8
-			cout << "you're in room 8! you can go west or north.";
+			cout << "you enter a room that's basically empty." <<endl;
+			cout << "you can go west or north." << endl;
 			getline(cin, input);
 			system("Color 1C"); //color for plain room
 			if (input.compare("west") == 0)
@@ -171,17 +176,18 @@ int main() { //begin main
 			break;
 
 		case 9:  //room 9
-			cout << "you're in room 9! you can go west or east.";
+			cout << "you enter another empty room." << endl;
+			cout << "you can go west or east." << endl;
 			getline(cin, input);
 			system("Color 1C"); //color for plain room
 			if (input.compare("west") == 0)
-				room = 1;
-			if (input.compare("east") == 0)
 				room = 10;
+			if (input.compare("east") == 0)
+				room = 8;
 			break;
 
 		case 10:  //room 10, encounter a human
-			cout << "you're in room 10, where you see a human!";
+			cout << "you enter a room where you see a human standing and facing the corner!";
 			system("Color 3C"); //color for human in room
 
 			if (inventory[5] == ("bronze key")); //no bronze key in inventory
@@ -194,7 +200,7 @@ int main() { //begin main
 			cout << "you can go north or south." << endl;
 			getline(cin, input);
 			if (input.compare("north") == 0)
-				room = 9;
+				room = 1;
 			if (input.compare("south") == 0)
 				room = 11;
 
@@ -213,10 +219,11 @@ int main() { //begin main
 				inventory[6] = "golden apple"; //put in 
 				cout << "You grabbed the golden apple!" << endl;
 			}
+			cout << "you can go north or south" << endl;
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 10;
-			if (input.compare("east") == 0)
+			if (input.compare("south") == 0)
 				room = 12;
 
 			inventory[6] = "golden apple";
@@ -228,11 +235,12 @@ int main() { //begin main
 			Monsters();
 
 			system("Color 4B"); //color for rooms with items
+			cout << "you can go north or east." << endl;
 			getline(cin, input);
 			if (input.compare("north") == 0)
-				room = 1;
-			if (input.compare("west") == 0)
-				room = 5;
+				room = 11;
+			if (input.compare("east") == 0)
+				room = 13;
 
 
 			break;
@@ -258,7 +266,7 @@ int main() { //begin main
 
 void Monsters() { //monster generator
 
-	int num = rand() % 100 + 1;
+	1 num = rand() % 100 + 1;
 	if (num <= 50)
 		cout << "A vampire appears and attacks you" << endl; //more likely
 	else if (num > 51 && num <= 80)
