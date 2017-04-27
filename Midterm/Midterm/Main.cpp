@@ -32,6 +32,10 @@ int main() { //begin main
 
 	cout << "You feel the eerie atmosphere as you approach 'The Labyrinth'..." << endl; //introduction to the game
 	cout << "----------------------------------------------------------------" << endl; //make it spaced nicely
+	cout << "You read the note with your mission on it from King Levy." << endl;
+	PlaySound(".wav", NULL, SND_FILENAME);
+	cout << "You give yourself some reassurance by saying someg good words." << endl;
+	PlaySound(".wav", NULL, SND_FILENAME);
 
 	while (input.compare("quit") != 0) { //begin while loop
 		switch (room) { //begin switch
