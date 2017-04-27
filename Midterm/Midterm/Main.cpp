@@ -13,7 +13,7 @@ void Monsters();
 
 int main() { //begin main
 
-	for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < 8; i++) { //inventory begin bracket
 		string inventory[8];
 
 		inventory[0] = "Empty";
@@ -24,7 +24,7 @@ int main() { //begin main
 		inventory[5] = "Empty";  //to other hidden room from human
 		inventory[6] = "Empty";  //key to hidden room
 		inventory[7] = "Empty";  //wins game
-	}
+	} //invetory end bracket
 
 	string input = "a";
 	int room = 1;
@@ -32,8 +32,8 @@ int main() { //begin main
 
 	cout << "You feel the eerie atmosphere as you approach 'The Labyrinth'..." << endl; //introduction to the game
 	cout << "----------------------------------------------------------------" << endl; //make it spaced nicely
-	
-	while (input.compare ("quit")!=0) { //begin while loop
+
+	while (input.compare("quit") != 0) { //begin while loop
 		switch (room) { //begin switch
 		case 1:  //room 1
 			system("Color 1C"); //color for plain room
@@ -51,26 +51,26 @@ int main() { //begin main
 		case 2:  //room 2
 			cout << "You enter a more lit room with a table in the middle of the room";
 			if (inventory[1] == ("silver key")); //no silver key in inventory
-				cout << "there's a silver key on the table" << endl; //say there's a key on the table
+			cout << "there's a silver key on the table" << endl; //say there's a key on the table
 			getline(cin, input);
 			if (input.compare("silver key") == 0) { //silver key is now in the inventory
 				inventory[1] = "silver key"; //put in 
 				cout << "You grabbed the key!" << endl;
 			}
-				system("Color 2B"); //color for rooms with items
+			system("Color 2B"); //color for rooms with items
 
-				cout << "You decide if you want to go east or south." << endl;
-				getline(cin, input);
-				if (input.compare("east") == 0)
-					room = 3;
-				else if (input.compare("south") == 0)
-					room = 1;
-				else
-					cout << "invalid input" << endl;
+			cout << "You decide if you want to go east or south." << endl;
+			getline(cin, input);
+			if (input.compare("east") == 0)
+				room = 3;
+			else if (input.compare("south") == 0)
+				room = 1;
+			else
+				cout << "invalid input" << endl;
 
-				inventory[1] = "silver key";
+			inventory[1] = "silver key";
 
-				break;
+			break;
 
 		case 3:  //room 3
 			cout << "you're in a room that has a lot of old, fragile, vases... nothing too interesting. You can go east or west.";
@@ -85,13 +85,13 @@ int main() { //begin main
 		case 4: //room 4
 			cout << "you enter a very small room." << endl;
 			if (inventory[2] == ("sword")); //no sword in inventory
-				cout << "You see a sword on one of the walls.";
+			cout << "You see a sword on one of the walls.";
 			getline(cin, input);
 			if (input.compare("sword") == 0) { //sword is now in the inventory
 				inventory[2] = "sword"; //put in 
 				cout << "You grabbed the sword!" << endl;
 			}
-			cout << "you decide if you want to go south, west, north, east." << endl; 
+			cout << "you decide if you want to go south, west, north, east." << endl;
 			system("Color 2B"); //color for rooms with items
 			getline(cin, input);
 			if (input.compare("west") == 0)
@@ -113,7 +113,7 @@ int main() { //begin main
 			cout << "you've found and entered the secret room." << endl;
 
 			if (inventory[3] == ("gold key")); //no gold key in inventory
-				cout << "there's a gold key on the table" << endl; //say there's a key on the table
+			cout << "there's a gold key on the table" << endl; //say there's a key on the table
 			getline(cin, input);
 			if (input.compare("gold key") == 0) { //gold key is now in the inventory
 				inventory[3] = "gold key"; //put in 
@@ -134,7 +134,7 @@ int main() { //begin main
 			cout << "The human exposed you to this secret room, where he exposed you to a monster encounter.";
 			system("Color 4B"); //color for rooms with monsters
 			Monsters();
-			
+
 			cout << "you can only go west." << endl;
 			getline(cin, input);
 			if (input.compare("west") == 0)
@@ -147,7 +147,7 @@ int main() { //begin main
 			system("Color 2B"); //color for rooms with items
 			Monsters();
 			if (inventory[4] == ("red apple")); //no red apple in inventory
-				cout << "you kill the monster, he drops a red apple" << endl; //say there's an apple
+			cout << "you kill the monster, he drops a red apple" << endl; //say there's an apple
 			getline(cin, input);
 			if (input.compare("red apple") == 0) { //red apple is now in the inventory
 				inventory[4] = "red apple"; //put in 
@@ -165,7 +165,7 @@ int main() { //begin main
 			break;
 
 		case 8:  //room 8
-			cout << "you enter a room that's basically empty." <<endl;
+			cout << "you enter a room that's basically empty." << endl;
 			cout << "you can go west or north." << endl;
 			getline(cin, input);
 			system("Color 1C"); //color for plain room
@@ -191,7 +191,7 @@ int main() { //begin main
 			system("Color 3C"); //color for human in room
 
 			if (inventory[5] == ("bronze key")); //no bronze key in inventory
-				cout << "he gives you a bronze key" << endl; //say there's a bronze key
+			cout << "he gives you a bronze key" << endl; //say there's a bronze key
 			getline(cin, input);
 			if (input.compare("bronze key") == 0) { //bronze key is now in the inventory
 				inventory[5] = "bronze key"; //put in 
@@ -213,7 +213,7 @@ int main() { //begin main
 			system("Color 2B"); //color for rooms with items
 
 			if (inventory[6] == ("golden apple")); //no golden apple in inventory
-				cout << "a golden apple is on the table" << endl; //say there's a golden apple
+			cout << "a golden apple is on the table" << endl; //say there's a golden apple
 			getline(cin, input);
 			if (input.compare("golden apple") == 0) { //golden apple is now in the inventory
 				inventory[6] = "golden apple"; //put in 
@@ -250,7 +250,7 @@ int main() { //begin main
 			system("Color 2B"); //color for rooms with items
 
 			if (inventory[7] == ("golden artifact")); //no golden artifact in inventory
-				cout << "you see the golden artifact" << endl; //say there's a golden artifact
+			cout << "you see the golden artifact" << endl; //say there's a golden artifact
 			getline(cin, input);
 			if (input.compare("golden artifact") == 0) { //golden artifact is now in the inventory
 				inventory[7] = "golden artifact"; //put in 
@@ -264,9 +264,9 @@ int main() { //begin main
 	} //end while loop
 } //end main
 
-void Monsters() { //monster generator
+void Monsters() { //monster generator begin
 
-	1 num = rand() % 100 + 1;
+	int num = rand() % 100 + 1;
 	if (num <= 50)
 		cout << "A vampire appears and attacks you" << endl; //more likely
 	else if (num > 51 && num <= 80)
@@ -274,4 +274,4 @@ void Monsters() { //monster generator
 	else
 		cout << "A zombie appears and attacks you" << endl; // less likely
 
-}
+} //monster generator end
