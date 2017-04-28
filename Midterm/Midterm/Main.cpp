@@ -33,16 +33,17 @@ int main() { //begin main
 	cout << "You feel the eerie atmosphere as you approach 'The Labyrinth'..." << endl; //introduction to the game
 	cout << "----------------------------------------------------------------" << endl; //make it spaced nicely
 	cout << "You read the note with your mission on it from King Levy." << endl;
-	PlaySound(".wav", NULL, SND_FILENAME);
+	//PlaySound(".wav", NULL, SND_FILENAME);
 	cout << "You give yourself some reassurance by saying someg good words." << endl;
-	PlaySound(".wav", NULL, SND_FILENAME);
+	//PlaySound(".wav", NULL, SND_FILENAME);
 
 	while (input.compare("quit") != 0) { //begin while loop
 		switch (room) { //begin switch
 		case 1:  //room 1
 			system("Color 1C"); //color for plain room
 
-			cout << "You enter a room that's barely lit with a few torches. You can go north or south.";
+			cout << "You enter a room that's barely lit with a few torches." << endl;
+			cout << "You can go north or south." << endl;
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 2;
@@ -53,9 +54,9 @@ int main() { //begin main
 			break;
 
 		case 2:  //room 2
-			cout << "You enter a more lit room with a table in the middle of the room";
+			cout << "You enter a more lit room with a table in the middle of the room." << endl;
 			if (inventory[1] == ("silver key")); //no silver key in inventory
-			cout << "there's a silver key on the table" << endl; //say there's a key on the table
+			cout << "there's a silver key on the table." << endl; //say there's a key on the table
 			getline(cin, input);
 			if (input.compare("silver key") == 0) { //silver key is now in the inventory
 				inventory[1] = "silver key"; //put in 
@@ -77,7 +78,8 @@ int main() { //begin main
 			break;
 
 		case 3:  //room 3
-			cout << "you're in a room that has a lot of old, fragile, vases... nothing too interesting. You can go east or west.";
+			cout << "you're in a room that has a lot of old, fragile, vases... nothing too interesting." << endl;
+			cout << "You can go east or west." << endl;
 			getline(cin, input);
 			system("Color 1C"); //color for plain room
 			if (input.compare("east") == 0)
@@ -89,7 +91,7 @@ int main() { //begin main
 		case 4: //room 4
 			cout << "you enter a very small room." << endl;
 			if (inventory[2] == ("sword")); //no sword in inventory
-			cout << "You see a sword on one of the walls.";
+			cout << "You see a sword on one of the walls." << endl;
 			getline(cin, input);
 			if (input.compare("sword") == 0) { //sword is now in the inventory
 				inventory[2] = "sword"; //put in 
