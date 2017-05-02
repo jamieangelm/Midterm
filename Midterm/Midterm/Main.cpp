@@ -48,7 +48,7 @@ int main() { //begin main
 			if (input.compare("north") == 0)
 				room = 2;
 			else if (input.compare("south") == 0)
-				room = 9;
+				room = 10;
 			else
 				cout << "invalid input" << endl;
 			break;
@@ -194,7 +194,7 @@ int main() { //begin main
 
 		case 10:  //room 10, encounter a human
 			cout << "you enter a room where you see a human standing and facing the corner!" << endl;
-			system("Color 3C"); //color for human in room
+			system("Color 5D"); //color for human in room
 
 			if (inventory[5] == ("bronze key")); //no bronze key in inventory
 			cout << "he gives you a bronze key" << endl; //say there's a bronze key
@@ -241,7 +241,7 @@ int main() { //begin main
 			Monsters();
 
 			system("Color 4B"); //color for rooms with items
-			cout << "you can go north or east." << endl;
+			cout << "You can go north or east." << endl;
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 11;
@@ -256,7 +256,7 @@ int main() { //begin main
 			system("Color 2B"); //color for rooms with items
 
 			if (inventory[7] == ("golden artifact")); //no golden artifact in inventory
-			cout << "you see the golden artifact" << endl; //say there's a golden artifact
+			cout << "You see the golden artifact" << endl; //say there's a golden artifact
 			getline(cin, input);
 			if (input.compare("golden artifact") == 0) { //golden artifact is now in the inventory
 				inventory[7] = "golden artifact"; //put in 
