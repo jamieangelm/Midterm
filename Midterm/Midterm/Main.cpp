@@ -27,7 +27,7 @@ int main() { //begin main
 	} //invetory end bracket
 
 	string input = "a";
-	int room = 1;
+	int room = 1; //start at the first room
 	string inventory[8];  //7 items listed above
 
 	cout << "You feel the eerie atmosphere as you approach 'The Labyrinth'..." << endl; //introduction to the game
