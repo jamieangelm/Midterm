@@ -137,8 +137,13 @@ int main() { //begin main
 			}
 			cout << "you can go south!" << endl;
 			getline(cin, input);
-			if (input.compare("south") == 0)
+			if (input.compare("south") == 0) {
+				if (inventory[2] == "sword")
+					room = 14;
+				else 
 				room = 4;
+			}
+				
 			else
 				cout << "invalid input" << endl;
 
@@ -149,7 +154,7 @@ int main() { //begin main
 		case 6: //room 6, secret room
 			cout << "The human exposed you to this secret room, where he exposed you to a monster encounter.";
 			system("Color 4B"); //color for rooms with monsters
-			Monsters(int health);
+			Monsters(health);
 
 			cout << "you can only go west." << endl;
 			getline(cin, input);
@@ -161,7 +166,7 @@ int main() { //begin main
 			cout << "you enter a dark room, and you hear a low grunting." << endl;
 
 			system("Color 2B"); //color for rooms with items
-			Monsters(int health);
+			Monsters(health);
 			if (inventory[4] == ("red apple")); //no red apple in inventory
 			cout << "you kill the monster, he drops a red apple" << endl; //say there's an apple
 			getline(cin, input);
@@ -248,7 +253,7 @@ int main() { //begin main
 
 		case 12:  //room 12
 			cout << "you enter a dark room. You hear footsteps." << endl;
-			Monsters(int health);
+			Monsters(health);
 
 			system("Color 4B"); //color for rooms with items
 			cout << "You can go north or east." << endl;
@@ -282,6 +287,12 @@ int main() { //begin main
 			inventory[7] = "goldenartifact";
 
 			break;
+
+		case 14: //
+			cout << "you're back in the very small room." << endl;
+			cout << "you can go east or south." << endl;
+			break;
+
 		} //end switch
 	} //end while loop
 } //end main
