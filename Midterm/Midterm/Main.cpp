@@ -7,9 +7,9 @@
 #include <windows.h>
 using namespace std;
 
-int health = 500; //total health
+int health = 200; //total health
 
-void Monsters();
+void Monsters(int health);
 
 int main() { //begin main
 
@@ -19,7 +19,7 @@ int main() { //begin main
 		inventory[0] = "Empty";
 		inventory[1] = "Empty"; //adds ~ 50 health
 		inventory[2] = "Empty"; //key needed to finish game
-		inventory[3] = "Empty"; //adds ~ 350 health
+		inventory[3] = "Empty"; //adds ~ 150 health
 		inventory[4] = "Empty"; //fight monsters
 		inventory[5] = "Empty"; //to other hidden room from human
 		inventory[6] = "Empty"; //key to hidden room
@@ -104,12 +104,22 @@ int main() { //begin main
 				room = 3;
 			if (input.compare("south") == 0)
 				room = 7;
-			if (input.compare("north") == 0)
-				room = 5;
-			if (input.compare("east") == 0)
-				room = 6;
-			else
-				cout << "invalid input" << endl;
+			if (input.compare("north") == 0){
+				if (inventory[1].compare("silver key") == 0) { //have to have key to enter the room
+					cout << "You unlocked the door." << endl; //if you have the key, you can enter the room
+					room = 5;
+				}
+				else
+					cout << "Door is locked." << endl; // door is locked
+			}
+			if (input.compare("east") == 0) {
+				if (inventory[1].compare("bronze key") == 0) { //have to have key to enter the room
+					cout << "You unlocked the door." << endl; //if you have the key, you can enter the room
+					room = 6;
+				}
+				else
+					cout << "Door is locked." << endl; // door is locked
+			}
 
 			inventory[2] = "sword";
 
@@ -139,7 +149,7 @@ int main() { //begin main
 		case 6: //room 6, secret room
 			cout << "The human exposed you to this secret room, where he exposed you to a monster encounter.";
 			system("Color 4B"); //color for rooms with monsters
-			Monsters();
+			Monsters(int health);
 
 			cout << "you can only go west." << endl;
 			getline(cin, input);
@@ -151,7 +161,7 @@ int main() { //begin main
 			cout << "you enter a dark room, and you hear a low grunting." << endl;
 
 			system("Color 2B"); //color for rooms with items
-			Monsters();
+			Monsters(int health);
 			if (inventory[4] == ("red apple")); //no red apple in inventory
 			cout << "you kill the monster, he drops a red apple" << endl; //say there's an apple
 			getline(cin, input);
@@ -238,15 +248,21 @@ int main() { //begin main
 
 		case 12:  //room 12
 			cout << "you enter a dark room. You hear footsteps." << endl;
-			Monsters();
+			Monsters(int health);
 
 			system("Color 4B"); //color for rooms with items
 			cout << "You can go north or east." << endl;
 			getline(cin, input);
 			if (input.compare("north") == 0)
 				room = 11;
-			if (input.compare("east") == 0)
-				room = 13;
+			if (input.compare("east") == 0) {
+				if (inventory[1].compare("gold key") == 0) { //have to have key to enter the room
+					cout << "You unlocked the door." << endl; //if you have the key, you can enter the room
+					room = 13;
+				}
+				else
+					cout << "Door is locked." << endl; // door is locked
+			}
 
 
 			break;
@@ -270,14 +286,23 @@ int main() { //begin main
 	} //end while loop
 } //end main
 
-void Monsters() { //monster generator begin
+void Monsters(int health) { //monster generator begin
 
 	int num = rand() % 100 + 1;
-	if (num <= 50)
+	if (num <= 50) {
 		cout << "A vampire appears and attacks you" << endl; //more likely
-	else if (num > 51 && num <= 80)
+		health = -100;
+		cout << "Your health is now" << health << "." << endl;
+	}
+	else if (num > 51 && num <= 80) {
 		cout << "An alien appears and attacks you" << endl;
-	else
+		health = -50;
+		cout << "Your health is now" << health << "." << endl;
+	}
+	else {
 		cout << "A zombie appears and attacks you" << endl; // less likely
+		health = -20;
+		cout << "Your health is now" << health << "." << endl;
+	}
 
 } //monster generator end
