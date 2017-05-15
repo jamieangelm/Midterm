@@ -293,28 +293,28 @@ int main() { //begin main
 			break;
 
 		case 15: // after you grab the sword, this is the room without the sword
-			cout << "you're back in the very small room." << endl;
-			cout << "you can go east or south." << endl;
+			cout << "you're back in the very small room, after unlocking the secret room." << endl;
+			cout << "you can go west or south." << endl;
 			break;
 
 		case 16: // after you grab the gold key, this is the room without it
 			cout << "you're back in the very small room." << endl;
-			cout << "you can go east or south." << endl;
+			cout << "you can go south." << endl;
 			break;
 
 		case 17: // after you grab the red apple, this is the room without it
 			cout << "you're back in the very small room." << endl;
-			cout << "you can go east or south." << endl;
+			cout << "you can go north or south." << endl;
 			break;
 
 		case 18: // the human isn't in this room anymore
 			cout << "you're back in the very small room." << endl;
-			cout << "you can go east or south." << endl;
+			cout << "you can go north, east, or south." << endl;
 			break;
 
 		case 19: // after you grab the gold apple, this is the room without it
 			cout << "you're back in the very small room." << endl;
-			cout << "you can go east or south." << endl;
+			cout << "you can go north or south." << endl;
 			break;
 
 		} //end switch
@@ -324,20 +324,22 @@ int main() { //begin main
 void Monsters(int health) { //monster generator begin
 
 	int num = rand() % 100 + 1;
-	if (num <= 50) {
+	if (num <= 50) { //if begin
 		cout << "A vampire appears and attacks you" << endl; //more likely
 		health = -100;
 		cout << "Your health is now" << health << "." << endl;
-	}
-	else if (num > 51 && num <= 80) {
+	} //if end
+
+	else if (num > 51 && num <= 80) { //else if begin
 		cout << "An alien appears and attacks you" << endl;
 		health = -50;
 		cout << "Your health is now" << health << "." << endl;
-	}
-	else {
+	} //else if end
+
+	else { //else begin
 		cout << "A zombie appears and attacks you" << endl; // less likely
 		health = -20;
 		cout << "Your health is now" << health << "." << endl;
-	}
+	} //else end
 
 } //monster generator end
