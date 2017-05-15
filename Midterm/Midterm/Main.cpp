@@ -104,7 +104,7 @@ int main() { //begin main
 				room = 3;
 			if (input.compare("south") == 0)
 				room = 7;
-			if (input.compare("north") == 0){
+			if (input.compare("north") == 0) {
 				if (inventory[1].compare("silver key") == 0) { //have to have key to enter the room
 					cout << "You unlocked the door." << endl; //if you have the key, you can enter the room
 					room = 5;
@@ -140,10 +140,10 @@ int main() { //begin main
 			if (input.compare("south") == 0) {
 				if (inventory[2] == "sword")
 					room = 14;
-				else 
-				room = 4;
+				else
+					room = 4;
 			}
-				
+
 			else
 				cout << "invalid input" << endl;
 
@@ -269,7 +269,6 @@ int main() { //begin main
 					cout << "Door is locked." << endl; // door is locked
 			}
 
-
 			break;
 
 		case 13: //last room to win
@@ -288,7 +287,32 @@ int main() { //begin main
 
 			break;
 
-		case 14: //
+		case 14: // after you grab the silver key, this is the room without it
+			cout << "you're back in the very small room." << endl;
+			cout << "you can go east or south." << endl;
+			break;
+
+		case 15: // after you grab the sword, this is the room without the sword
+			cout << "you're back in the very small room." << endl;
+			cout << "you can go east or south." << endl;
+			break;
+
+		case 16: // after you grab the gold key, this is the room without it
+			cout << "you're back in the very small room." << endl;
+			cout << "you can go east or south." << endl;
+			break;
+
+		case 17: // after you grab the red apple, this is the room without it
+			cout << "you're back in the very small room." << endl;
+			cout << "you can go east or south." << endl;
+			break;
+
+		case 18: // the human isn't in this room anymore
+			cout << "you're back in the very small room." << endl;
+			cout << "you can go east or south." << endl;
+			break;
+
+		case 19: // after you grab the gold apple, this is the room without it
 			cout << "you're back in the very small room." << endl;
 			cout << "you can go east or south." << endl;
 			break;
