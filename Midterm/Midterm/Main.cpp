@@ -55,8 +55,9 @@ int main() { //begin main
 
 		case 2:  //room 2
 			cout << "You enter a more lit room with a table in the middle of the room." << endl;
-			if (inventory[1] == ("silver key")) //no silver key in inventory
-			cout << "there's a silver key on the table." << endl; //say there's a key on the table
+			if (inventory[1] != ("silver key")) { //no silver key in inventory
+				cout << "there's a silver key on the table." << endl;
+			} //say there's a key on the table
 			getline(cin, input);
 			if (input.compare("silver key") == 0) { //silver key is now in the inventory
 
