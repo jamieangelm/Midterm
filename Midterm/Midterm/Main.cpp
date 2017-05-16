@@ -33,7 +33,7 @@ int main() { //begin main
 	cout << "You feel the eerie atmosphere as you approach 'The Labyrinth'..." << endl; //introduction to the game
 	cout << "----------------------------------------------------------------" << endl; //make it spaced nicely
 	cout << "You read the note with your mission on it from King Levy." << endl;
-	//PlaySound(".wav", NULL, SND_FILENAME);
+	//PlaySound("levyc.wav", NULL, SND_FILENAME);
 	cout << "You tell yourself that you're going to complete the mission." << endl;
 	//PlaySound("sochoeun.wav", NULL, SND_FILENAME);
 
