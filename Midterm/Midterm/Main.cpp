@@ -1,4 +1,4 @@
-//Jamie Martinez, April 28
+//Jamie Martinez, May 15
 //Game Name: The Labyrinth
 
 #include <iostream>
@@ -17,13 +17,13 @@ int main() { //begin main
 		string inventory[8];
 
 		inventory[0] = "Empty";
-		inventory[1] = "Empty"; //adds ~ 50 health
-		inventory[2] = "Empty"; //key needed to finish game
-		inventory[3] = "Empty"; //adds ~ 150 health
-		inventory[4] = "Empty"; //fight monsters
-		inventory[5] = "Empty"; //to other hidden room from human
-		inventory[6] = "Empty"; //key to hidden room
-		inventory[7] = "Empty"; //wins game
+		inventory[1] = "Empty"; //key to hidden room
+		inventory[2] = "Empty"; //sword to fight monsters
+		inventory[3] = "Empty"; //key to win game
+		inventory[4] = "Empty"; //apple for 50 health
+		inventory[5] = "Empty"; //key from human
+		inventory[6] = "Empty"; //apple for 150 health
+		inventory[7] = "Empty"; //golden artifact to win game
 	} //invetory end bracket
 
 	string input = "a";
@@ -181,7 +181,7 @@ int main() { //begin main
 			if (input.compare("south") == 0)
 				room = 8;
 
-			inventory[4] = "silver key";
+			inventory[4] = "red apple";
 
 			break;
 
@@ -283,7 +283,7 @@ int main() { //begin main
 				cout << "You grabbed the golden artifact!" << endl;
 			}
 
-			inventory[7] = "goldenartifact";
+			inventory[7] = "golden artifact";
 
 			break;
 
