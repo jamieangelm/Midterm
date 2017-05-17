@@ -34,6 +34,7 @@ int main() { //begin main
 	cout << "----------------------------------------------------------------" << endl; //make it spaced nicely
 	cout << "You read the note with your mission on it from King Levy." << endl;
 	PlaySound("levy.wav", NULL, SND_FILENAME);
+	system("pause");
 	cout << "You tell yourself that you're going to complete the mission." << endl;
 	PlaySound("sochoeun.wav", NULL, SND_FILENAME);
 
