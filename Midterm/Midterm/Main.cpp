@@ -141,7 +141,7 @@ int main() { //begin main
 			cout << "you can go south!" << endl;
 			getline(cin, input);
 			if (input.compare("south") == 0) {
-				if (inventory[2] == "sword")
+				if (inventory[3] == "gold key")
 					room = 14;
 				else
 					room = 4;
