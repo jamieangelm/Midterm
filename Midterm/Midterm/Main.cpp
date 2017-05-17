@@ -116,7 +116,7 @@ int main() { //begin main
 					cout << "Door is locked." << endl; // door is locked
 			}
 			if (input.compare("east") == 0) {
-				if (inventory[1].compare("bronze key") == 0) { //have to have key to enter the room
+				if (inventory[5].compare("bronze key") == 0) { //have to have key to enter the room
 					cout << "You unlocked the door." << endl; //if you have the key, you can enter the room
 					room = 6;
 				}
@@ -143,8 +143,6 @@ int main() { //begin main
 			getline(cin, input);
 			if (input.compare("south") == 0) {
 				if (inventory[3] == "gold key")
-					room = 14;
-				else
 					room = 4;
 			}
 
@@ -268,7 +266,7 @@ int main() { //begin main
 			if (input.compare("north") == 0)
 				room = 11;
 			if (input.compare("east") == 0) {
-				if (inventory[1].compare("gold key") == 0) { //have to have key to enter the room
+				if (inventory[3].compare("gold key") == 0) { //have to have key to enter the room
 					cout << "You unlocked the door." << endl; //if you have the key, you can enter the room
 					room = 13;
 				}
@@ -298,11 +296,39 @@ int main() { //begin main
 		case 14: // after you grab the silver key, this is the room without it
 			cout << "you re-enter the lit room." << endl;
 			cout << "you can go east or south." << endl;
+			getline(cin, input);
+			if (input.compare("east") == 0)
+				room = 3;
+			else if (input.compare("south") == 0)
+				room = 1;
+			else
+				cout << "invalid input" << endl;
 			break;
 
 		case 15: // after you grab the sword, this is the room without the sword
 			cout << "you're back in the very small room, after unlocking the secret room." << endl;
 			cout << "you can go west or south." << endl;
+			getline(cin, input);
+			if (input.compare("west") == 0)
+				room = 3;
+			if (input.compare("south") == 0)
+				room = 7;
+			if (input.compare("north") == 0) {
+				if (inventory[1].compare("silver key") == 0) { //have to have key to enter the room
+					cout << "You unlocked the door." << endl; //if you have the key, you can enter the room
+					room = 5;
+				}
+				else
+					cout << "Door is locked." << endl; // door is locked
+			}
+			if (input.compare("east") == 0) {
+				if (inventory[5].compare("bronze key") == 0) { //have to have key to enter the room
+					cout << "You unlocked the door." << endl; //if you have the key, you can enter the room
+					room = 6;
+				}
+				else
+					cout << "Door is locked." << endl; // door is locked
+			}
 			break;
 
 		case 16: // after you grab the gold key, this is the room without it
