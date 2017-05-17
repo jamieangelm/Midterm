@@ -334,21 +334,43 @@ int main() { //begin main
 		case 16: // after you grab the gold key, this is the room without it
 			cout << "you're back in the secret room, which isn't a secret anymore." << endl;
 			cout << "you can go south." << endl;
+			getline(cin, input);
+			if (input.compare("south") == 0) {
+				if (inventory[3] == "gold key")
+					room = 4;
+			}
+			else
+				cout << "invalid input" << endl;
 			break;
 
 		case 17: // after you grab the red apple, this is the room without it
 			cout << "you see the monster corpse on the floor from earlier." << endl;
 			cout << "you can go north or south." << endl;
+			getline(cin, input);
+			if (input.compare("north") == 0)
+				room = 4;
+			if (input.compare("south") == 0)
+				room = 8;
 			break;
 
 		case 18: // the human isn't in this room anymore
 			cout << "you walk back into the room where you met the human, but he went somewhere else." << endl;
 			cout << "you can go north, east, or south." << endl;
+			getline(cin, input);
+			if (input.compare("north") == 0)
+				room = 1;
+			if (input.compare("south") == 0)
+				room = 11;
 			break;
 
 		case 19: // after you grab the gold apple, this is the room without it
 			cout << "you enter a room that's empty." << endl;
 			cout << "you can go north or south." << endl;
+			getline(cin, input);
+			if (input.compare("north") == 0)
+				room = 10;
+			if (input.compare("south") == 0)
+				room = 12;
 			break;
 
 		} //end switch
